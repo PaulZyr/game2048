@@ -1,0 +1,185 @@
+﻿<Window x:Class="Home0422_2048.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Home0422_2048"
+        mc:Ignorable="d"
+        Title="2048" Height="600" Width="500" KeyDown="Window_KeyDown" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:NumberBackgroundConverter x:Key="numBackConvert"/>
+        <local:NumberForeGroundConverter x:Key="numForegroundConvert"/>
+        <Style TargetType="Label">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Style.Resources>
+            <Style.Setters>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Background" Value="#FFEEE4DA"/>
+                <Setter Property="FontSize" Value="30"/>
+            </Style.Setters>
+        </Style>
+        <Style x:Key="scoreStyle" TargetType="Label">
+            <Style.Setters>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="FontSize" Value="18"/>
+            </Style.Setters>
+        </Style>
+    </Window.Resources>
+    
+    <Grid Background="#FFF8F6E9">
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem x:Name="startNew" Header="New Game" Click="startNew_Click"/>
+            </ContextMenu>
+        </Grid.ContextMenu>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="5,5,5,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="#FFBBADA0" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="1" Style="{StaticResource scoreStyle}">Score</Label>
+                <Label Grid.Row="2" Style="{StaticResource scoreStyle}" x:Name="scoreLabel"  
+                       Content="{Binding Cells[4][0], Mode=OneWay}"></Label>
+            </Grid>
+            <Grid Grid.Column="1" Background="#FFBBADA0" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="1" Style="{StaticResource scoreStyle}">High Score</Label>
+                <Label Grid.Row="2" Style="{StaticResource scoreStyle}" x:Name="highScoreLabel"
+                       Content="{Binding Cells[4][1], Mode=OneWay}"></Label>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="#FFBBADA0" Margin="10">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" 
+                       Content="{Binding Cells[0][0], Mode=OneWay}"
+                       Background="{Binding Cells[0][0], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[0][0], Converter={StaticResource numForegroundConvert}}">
+                    
+                </Label>
+                <Label Grid.Row="0" Grid.Column="1" 
+                       Content="{Binding Cells[0][1], Mode=OneWay}"
+                       Background="{Binding Cells[0][1], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[0][1], Converter={StaticResource numForegroundConvert}}">
+                    
+                </Label>
+                <Label Grid.Row="0" Grid.Column="2" 
+                       Content="{Binding Cells[0][2], Mode=OneWay}"
+                       Background="{Binding Cells[0][2], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[0][2], Converter={StaticResource numForegroundConvert}}">
+                    
+                </Label>
+                <Label Grid.Row="0" Grid.Column="3" 
+                       Content="{Binding Cells[0][3], Mode=OneWay}"
+                       Background="{Binding Cells[0][3], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[0][3], Converter={StaticResource numForegroundConvert}}">
+                    
+                </Label>
+                <Label Grid.Row="1" Grid.Column="0" 
+                       Content="{Binding Cells[1][0], Mode=OneWay}"
+                       Background="{Binding Cells[1][0], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[1][0], Converter={StaticResource numForegroundConvert}}">
+                    
+                </Label>
+                <Label Grid.Row="1" Grid.Column="1" 
+                       Content="{Binding Cells[1][1], Mode=OneWay}"
+                       Background="{Binding Cells[1][1], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[1][1], Converter={StaticResource numForegroundConvert}}">
+                    
+                </Label>
+                <Label Grid.Row="1" Grid.Column="2" 
+                       Content="{Binding Cells[1][2], Mode=OneWay}"
+                       Background="{Binding Cells[1][2], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[1][2], Converter={StaticResource numForegroundConvert}}">
+                    
+                </Label>
+                <Label Grid.Row="1" Grid.Column="3" 
+                       Content="{Binding Cells[1][3], Mode=OneWay}"
+                       Background="{Binding Cells[1][3], Converter={StaticResource numBackConvert}}">
+                    
+                </Label>
+                <Label Grid.Row="2" Grid.Column="0" 
+                       Content="{Binding Cells[2][0], Mode=OneWay}"
+                       Background="{Binding Cells[2][0], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[2][0], Converter={StaticResource numForegroundConvert}}">
+                    
+                </Label>
+                <Label Grid.Row="2" Grid.Column="1" 
+                       Content="{Binding Cells[2][1], Mode=OneWay}"
+                       Background="{Binding Cells[2][1], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[2][1], Converter={StaticResource numForegroundConvert}}">
+                    
+                </Label>
+                <Label Grid.Row="2" Grid.Column="2" 
+                       Content="{Binding Cells[2][2], Mode=OneWay}"
+                       Background="{Binding Cells[2][2], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[2][2], Converter={StaticResource numForegroundConvert}}">
+                    
+                </Label>
+                <Label Grid.Row="2" Grid.Column="3" 
+                       Content="{Binding Cells[2][3], Mode=OneWay}"
+                       Background="{Binding Cells[2][3], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[2][3], Converter={StaticResource numForegroundConvert}}">
+                    
+                </Label>
+                <Label Grid.Row="3" Grid.Column="0" 
+                       Content="{Binding Cells[3][0], Mode=OneWay}"
+                       Background="{Binding Cells[3][0], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[3][0], Converter={StaticResource numForegroundConvert}}">
+                    
+                </Label>
+                <Label Grid.Row="3" Grid.Column="1" 
+                       Content="{Binding Cells[3][1], Mode=OneWay}"
+                       Background="{Binding Cells[3][1], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[3][1], Converter={StaticResource numForegroundConvert}}">
+                </Label>
+                <Label Grid.Row="3" Grid.Column="2" 
+                       Content="{Binding Cells[3][2], Mode=OneWay}"
+                       Background="{Binding Cells[3][2], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[3][2], Converter={StaticResource numForegroundConvert}}">
+                </Label>
+                <Label Grid.Row="3" Grid.Column="3" 
+                       Content="{Binding Cells[3][3], Mode=OneWay}"
+                       Background="{Binding Cells[3][3], Converter={StaticResource numBackConvert}}"
+                       Foreground="{Binding Cells[3][3], Converter={StaticResource numForegroundConvert}}">
+                </Label>
+            </Grid>
+            
+        </Grid>
+    </Grid>
+</Window>

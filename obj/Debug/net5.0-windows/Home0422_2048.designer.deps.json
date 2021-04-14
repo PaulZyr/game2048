@@ -1,0 +1,46 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Microsoft.Extensions.Localization.Abstractions/3.1.5": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Localization.Abstractions.dll": {
+            "assemblyVersion": "3.1.5.0",
+            "fileVersion": "3.100.520.27009"
+          }
+        }
+      },
+      "sabatex.Extensions/3.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Localization.Abstractions": "3.1.5"
+        },
+        "runtime": {
+          "lib/netstandard2.1/sabatex.Extensions.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.Extensions.Localization.Abstractions/3.1.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W/9RVSrBlKi3a3nQUBVXH4mKEW/AOnDpDzW/jDMUPA8YEK6JbccHZnt4LgjlcBQ4p2cPpJqHMSjDB1XPtOTLAg==",
+      "path": "microsoft.extensions.localization.abstractions/3.1.5",
+      "hashPath": "microsoft.extensions.localization.abstractions.3.1.5.nupkg.sha512"
+    },
+    "sabatex.Extensions/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XjZzWzfiys3eAeyJijbBNxD6ylA6LsTuA25VZnbBedMPGKaaxGPNHFRjmjwQxbXFu4Af+S2T7fFMQ5tbWFIhBQ==",
+      "path": "sabatex.extensions/3.2.0",
+      "hashPath": "sabatex.extensions.3.2.0.nupkg.sha512"
+    }
+  }
+}

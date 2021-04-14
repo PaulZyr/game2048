@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "BsOS36ll39S3ommuLS0tJHetccmZWtrgWthngT1rbZNla+jsOvY0DTGb9ds1A/KIqtsI8xFlRI/WHnKloLr4CA==",
+  "success": true,
+  "projectFilePath": "D:\\01_IT_all\\00_STEP\\WPF\\Home0422_2048\\Home0422_2048.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\paulzyr\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\3.1.5\\microsoft.extensions.localization.abstractions.3.1.5.nupkg.sha512",
+    "C:\\Users\\paulzyr\\.nuget\\packages\\sabatex.extensions\\3.2.0\\sabatex.extensions.3.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}
